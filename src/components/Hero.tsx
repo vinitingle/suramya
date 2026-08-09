@@ -2,7 +2,7 @@ import { siteContent } from '../data/content'
 import { siteImages } from '../data/images'
 
 const focusRing =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-deep focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
 
 export function Hero() {
   return (
@@ -50,7 +50,7 @@ export function Hero() {
 
         <a
           href={siteContent.hero.cta.href}
-          className={`mt-1 inline-flex items-center rounded-sm bg-sage px-6 py-3 font-sans text-sm tracking-wide text-cream transition-colors hover:bg-ink motion-safe:animate-[hero-rise_0.9s_ease-out_0.42s_both] ${focusRing}`}
+          className={`mt-1 inline-flex items-center rounded-sm bg-sage-deep px-6 py-3 font-sans text-sm tracking-wide text-cream transition-colors hover:bg-ink motion-safe:animate-[hero-rise_0.9s_ease-out_0.42s_both] ${focusRing}`}
         >
           {siteContent.hero.cta.label}
         </a>

@@ -1,7 +1,7 @@
 import { siteContent } from '../data/content'
 
 const focusRing =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-deep focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -21,13 +21,13 @@ export function Footer() {
         <div className="flex flex-col gap-3 sm:items-end">
           <a
             href={`mailto:${siteContent.connect.email}`}
-            className={`w-fit rounded-sm font-sans text-sm text-sage underline-offset-4 hover:underline ${focusRing}`}
+            className={`w-fit rounded-sm font-sans text-sm text-sage-deep underline-offset-4 hover:underline ${focusRing}`}
           >
             {siteContent.connect.email}
           </a>
           <a
             href={siteContent.connect.instagramUrl}
-            className={`w-fit rounded-sm font-sans text-sm text-sage underline-offset-4 hover:underline ${focusRing}`}
+            className={`w-fit rounded-sm font-sans text-sm text-sage-deep underline-offset-4 hover:underline ${focusRing}`}
             target="_blank"
             rel="noreferrer"
           >

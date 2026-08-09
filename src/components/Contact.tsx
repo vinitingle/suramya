@@ -8,7 +8,7 @@ import {
 import { Reveal } from './Reveal'
 
 const focusRing =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-deep focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
 
 const fieldClass =
   `mt-2 w-full rounded-sm border border-sage-muted bg-cream px-3 py-2.5 font-sans text-base text-ink placeholder:text-ink-soft/60 ${focusRing}`
@@ -64,13 +64,13 @@ export function Contact() {
             <div className="mt-8 flex flex-col gap-3 font-sans text-base text-ink">
               <a
                 href={`mailto:${siteContent.connect.email}`}
-                className={`w-fit rounded-sm text-sage underline-offset-4 hover:underline ${focusRing}`}
+                className={`w-fit rounded-sm text-sage-deep underline-offset-4 hover:underline ${focusRing}`}
               >
                 {siteContent.connect.email}
               </a>
               <a
                 href={siteContent.connect.instagramUrl}
-                className={`w-fit rounded-sm text-sage underline-offset-4 hover:underline ${focusRing}`}
+                className={`w-fit rounded-sm text-sage-deep underline-offset-4 hover:underline ${focusRing}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -225,7 +225,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className={`inline-flex items-center rounded-sm bg-sage px-6 py-3 font-sans text-sm tracking-wide text-cream transition-opacity hover:opacity-90 ${focusRing}`}
+                className={`inline-flex items-center rounded-sm bg-sage-deep px-6 py-3 font-sans text-sm tracking-wide text-cream transition-opacity hover:opacity-90 ${focusRing}`}
               >
                 Send enquiry
               </button>

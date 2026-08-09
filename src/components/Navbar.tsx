@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { siteContent } from '../data/content'
 
 const focusRing =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-deep focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -68,6 +68,22 @@ export function Navbar() {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
+    }
+  }, [open])
+
+  useEffect(() => {
+    const main = document.querySelector('main')
+    const footer = document.querySelector('footer')
+    if (!open) {
+      if (main) main.inert = false
+      if (footer) footer.inert = false
+      return
+    }
+    if (main) main.inert = true
+    if (footer) footer.inert = true
+    return () => {
+      if (main) main.inert = false
+      if (footer) footer.inert = false
     }
   }, [open])
 

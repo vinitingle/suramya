@@ -42,7 +42,7 @@ export function Gallery() {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-10 md:auto-rows-[14rem] md:grid-cols-4 md:gap-x-6 md:gap-y-16 lg:gap-x-8 lg:gap-y-20">
+        <div className="grid grid-cols-1 gap-10 md:auto-rows-[14rem] md:grid-cols-4 md:grid-flow-dense md:gap-x-6 md:gap-y-16 lg:gap-x-8 lg:gap-y-20">
           {artworks.map((artwork, index) => (
             <Reveal key={artwork.id} className={`h-full ${spanClass(artwork)}`}>
               <figure className="group flex h-full flex-col">
@@ -52,7 +52,7 @@ export function Gallery() {
                   <img
                     src={artwork.image}
                     alt={`${artwork.title}. ${artwork.description}`}
-                    className="h-full min-h-0 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    className="h-full min-h-0 w-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.03]"
                     loading={index === 0 ? undefined : 'lazy'}
                     decoding="async"
                   />

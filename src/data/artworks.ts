@@ -38,7 +38,6 @@ export const artworks: Artwork[] = [
       'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80',
     description:
       'Overlapping script fragments and pale washes that form a layered narrative of marks.',
-    featured: true,
     aspect: 'landscape',
   },
   {
@@ -79,7 +78,6 @@ export const artworks: Artwork[] = [
       'https://images.unsplash.com/photo-1490312278390-ab64016fca61?auto=format&fit=crop&w=1200&q=80',
     description:
       'A hand-formed clay showpiece with a gentle curve and raw, dried surface character.',
-    featured: true,
     aspect: 'portrait',
   },
   {
