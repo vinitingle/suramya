@@ -1,4 +1,5 @@
 import { About } from './components/About'
+import { Collections } from './components/Collections'
 import { Hero } from './components/Hero'
 import { Navbar } from './components/Navbar'
 
@@ -8,6 +9,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <About />
+      <Collections />
     </div>
   )
 }
