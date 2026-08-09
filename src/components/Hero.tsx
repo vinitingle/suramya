@@ -15,6 +15,7 @@ export function Hero() {
         alt=""
         className="absolute inset-0 h-full w-full object-cover motion-safe:animate-[hero-image-in_1.4s_ease-out_both]"
         decoding="async"
+        fetchPriority="high"
       />
       <div
         className="absolute inset-0 bg-gradient-to-t from-cream via-cream/80 to-ink/25"
@@ -33,7 +34,7 @@ export function Hero() {
         />
 
         <p
-          className="font-display text-xl tracking-[0.35em] text-sage sm:text-2xl motion-safe:animate-[hero-rise_0.9s_ease-out_0.12s_both]"
+          className="font-display text-lg text-sage/55 sm:text-xl motion-safe:animate-[hero-rise_0.9s_ease-out_0.12s_both]"
           lang="hi"
         >
           {siteContent.hero.devanagari}

@@ -22,5 +22,7 @@ describe('Hero', () => {
       `img[src="${siteImages.hero}"]`,
     ) as HTMLImageElement | null
     expect(background).toBeTruthy()
+    expect(background).toHaveAttribute('fetchpriority', 'high')
+    expect(background).not.toHaveAttribute('loading', 'lazy')
   })
 })

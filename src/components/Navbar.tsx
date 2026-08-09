@@ -21,10 +21,39 @@ export function Navbar() {
   useEffect(() => {
     if (!open) return
 
+    const getFocusable = () => {
+      const panelLinks =
+        panelRef.current?.querySelectorAll<HTMLElement>('a') ?? []
+      const items: HTMLElement[] = []
+      if (toggleRef.current) items.push(toggleRef.current)
+      panelLinks.forEach((link) => items.push(link))
+      return items
+    }
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setOpen(false)
         toggleRef.current?.focus()
+        return
+      }
+
+      if (event.key !== 'Tab') return
+
+      const focusable = getFocusable()
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      const active = document.activeElement as HTMLElement | null
+
+      if (event.shiftKey) {
+        if (active === first || !focusable.includes(active as HTMLElement)) {
+          event.preventDefault()
+          last.focus()
+        }
+      } else if (active === last) {
+        event.preventDefault()
+        first.focus()
       }
     }
 
