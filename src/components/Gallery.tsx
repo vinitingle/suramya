@@ -14,11 +14,8 @@ function spanClass(artwork: Artwork): string {
   return ''
 }
 
-function aspectClass(aspect: Artwork['aspect'], featured?: boolean): string {
-  if (featured && aspect === 'portrait') {
-    return 'h-full min-h-[18rem] md:min-h-0'
-  }
-  if (aspect === 'portrait') return 'aspect-[3/4] h-full'
+function mobileAspectClass(aspect: Artwork['aspect']): string {
+  if (aspect === 'portrait') return 'aspect-[3/4]'
   if (aspect === 'landscape') return 'aspect-[4/3]'
   return 'aspect-square'
 }
@@ -45,22 +42,22 @@ export function Gallery() {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-10 md:auto-rows-[14rem] md:grid-cols-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-10 md:auto-rows-[14rem] md:grid-cols-4 md:gap-x-6 md:gap-y-16 lg:gap-x-8 lg:gap-y-20">
           {artworks.map((artwork, index) => (
             <Reveal key={artwork.id} className={`h-full ${spanClass(artwork)}`}>
               <figure className="group flex h-full flex-col">
                 <div
-                  className={`overflow-hidden ${aspectClass(artwork.aspect, artwork.featured)}`}
+                  className={`min-h-0 flex-1 overflow-hidden ${mobileAspectClass(artwork.aspect)} md:aspect-auto md:min-h-0`}
                 >
                   <img
                     src={artwork.image}
                     alt={`${artwork.title}. ${artwork.description}`}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    className="h-full min-h-0 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     loading={index === 0 ? undefined : 'lazy'}
                     decoding="async"
                   />
                 </div>
-                <figcaption className="mt-3 space-y-0.5">
+                <figcaption className="mt-3 shrink-0 space-y-0.5">
                   <p className="font-display text-lg tracking-wide text-ink">
                     {artwork.title}
                   </p>
