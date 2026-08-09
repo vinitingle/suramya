@@ -75,7 +75,7 @@ export const artworks: Artwork[] = [
     title: 'Earthen Curve',
     category: 'Clay Pieces',
     image:
-      'https://images.unsplash.com/photo-1490312278390-ab64016fca61?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=80',
     description:
       'A hand-formed clay showpiece with a gentle curve and raw, dried surface character.',
     aspect: 'portrait',
