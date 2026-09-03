@@ -1,21 +1,23 @@
 import { About } from './components/About'
-import { Collections } from './components/Collections'
-import { Contact } from './components/Contact'
+import { AnnouncementBar } from './components/AnnouncementBar'
+import { CategoryGrid } from './components/CategoryGrid'
+import { CustomBanner } from './components/CustomBanner'
 import { Footer } from './components/Footer'
-import { Gallery } from './components/Gallery'
+import { Header } from './components/Header'
 import { Hero } from './components/Hero'
-import { Navbar } from './components/Navbar'
+import { ValueProps } from './components/ValueProps'
 
 export default function App() {
   return (
     <div id="top" className="min-h-screen bg-cream text-ink">
-      <Navbar />
+      <AnnouncementBar />
+      <Header />
       <main>
         <Hero />
+        <ValueProps />
+        <CategoryGrid />
         <About />
-        <Collections />
-        <Gallery />
-        <Contact />
+        <CustomBanner />
       </main>
       <Footer />
     </div>
