@@ -4,13 +4,17 @@ import { siteContent } from '../data/content'
 import { Footer } from './Footer'
 
 describe('Footer', () => {
-  it('renders brand, statement, contact links, and copyright year', () => {
-    const year = new Date().getFullYear()
+  it('renders brand, statement, contact details, made with love, and copyright', () => {
     render(<Footer />)
 
     expect(
-      screen.getByText(siteContent.brand, { selector: 'footer *' }),
-    ).toBeInTheDocument()
+      screen.getByRole('contentinfo'),
+    ).toHaveAttribute('id', 'contact')
+
+    expect(
+      screen.getByRole('img', { name: siteContent.brand }),
+    ).toHaveAttribute('src', '/brand/suramya-logo.png')
+
     expect(screen.getByText(siteContent.footer.statement)).toBeInTheDocument()
 
     const emailLink = screen.getByRole('link', {
@@ -21,16 +25,12 @@ describe('Footer', () => {
       `mailto:${siteContent.connect.email}`,
     )
 
-    const instagramLink = screen.getByRole('link', {
-      name: siteContent.connect.instagram,
-    })
-    expect(instagramLink).toHaveAttribute(
-      'href',
-      siteContent.connect.instagramUrl,
-    )
+    expect(screen.getByText(siteContent.connect.phone)).toBeInTheDocument()
+    expect(screen.getByText(siteContent.connect.address)).toBeInTheDocument()
 
+    expect(screen.getByText(siteContent.footer.madeWith)).toBeInTheDocument()
     expect(
-      screen.getByText(new RegExp(`©\\s*${year}\\s*Suramya`, 'i')),
+      screen.getByText(/Suramya Arts & Crafts/i),
     ).toBeInTheDocument()
   })
 })
