@@ -5,7 +5,11 @@ import { CustomBanner } from './CustomBanner'
 
 describe('CustomBanner', () => {
   it('renders custom message and Order custom link to #custom', () => {
-    render(<CustomBanner />)
+    const { container } = render(<CustomBanner />)
+
+    const section = container.querySelector('#custom')
+    expect(section?.tagName).toBe('SECTION')
+    expect(section?.className).toMatch(/scroll-mt-28/)
 
     expect(screen.getByText(siteContent.custom.message)).toBeInTheDocument()
 

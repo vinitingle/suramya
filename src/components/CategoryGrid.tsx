@@ -7,14 +7,14 @@ export function CategoryGrid() {
   return (
     <section
       id="categories"
-      className="bg-cream px-5 py-20 sm:px-8 sm:py-28"
+      className="scroll-mt-28 bg-cream px-5 py-20 sm:px-8 sm:py-28"
       aria-labelledby="categories-heading"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <h2
             id="categories-heading"
-            className="mb-14 font-display text-3xl uppercase tracking-wide text-ink sm:mb-20 sm:text-4xl"
+            className="mb-14 text-center font-display text-3xl uppercase tracking-wide text-ink sm:mb-20 sm:text-4xl"
           >
             Shop by category
           </h2>
@@ -27,21 +27,23 @@ export function CategoryGrid() {
             return (
               <Reveal
                 key={category.id}
-                className="flex flex-col items-center text-center"
+                className="group flex flex-col items-center text-center"
               >
-                <img
-                  src={imageSrc}
-                  alt={category.title}
-                  className="mx-auto aspect-square w-full max-w-40 rounded-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div className="mx-auto aspect-square w-full max-w-40 overflow-hidden rounded-full">
+                  <img
+                    src={imageSrc}
+                    alt={category.title}
+                    className="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.03]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <h3 className="mt-4 font-sans text-sm font-semibold text-ink">
                   {category.title}
                 </h3>
                 <a
                   href="#categories"
-                  className={`mt-3 inline-flex rounded-md border border-sage-deep px-3 py-1.5 text-xs font-semibold uppercase text-sage-deep ${focusRing}`}
+                  className={`mt-3 inline-flex rounded-md border border-sage-deep px-3 py-1.5 text-xs font-semibold uppercase text-sage-deep transition-colors hover:bg-sage-deep hover:text-cream ${focusRing}`}
                 >
                   Explore
                 </a>

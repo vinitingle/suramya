@@ -39,6 +39,29 @@ function WhatsAppIcon() {
   )
 }
 
+function EmailIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M4 7l8 6 8-6"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function Footer() {
   const year = new Date().getFullYear()
   const phoneHref = `tel:+${siteContent.connect.phone.replace(/\D/g, '')}`
@@ -46,7 +69,7 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="border-t border-sage-muted/40 bg-cream-deep px-5 py-14 text-ink sm:px-8 sm:py-16"
+      className="scroll-mt-28 border-t border-sage-muted/40 bg-cream-deep px-5 py-14 text-ink sm:px-8 sm:py-16"
     >
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div>
@@ -83,6 +106,13 @@ export function Footer() {
               aria-label="WhatsApp"
             >
               <WhatsAppIcon />
+            </a>
+            <a
+              href={`mailto:${siteContent.connect.email}`}
+              className={socialClass}
+              aria-label="Email"
+            >
+              <EmailIcon />
             </a>
           </div>
         </div>

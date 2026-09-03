@@ -10,6 +10,7 @@ describe('About', () => {
 
     const section = container.querySelector('#about')
     expect(section?.tagName).toBe('SECTION')
+    expect(section?.className).toMatch(/scroll-mt-28/)
 
     expect(screen.getByText(/about us/i)).toBeInTheDocument()
     expect(

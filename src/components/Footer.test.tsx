@@ -7,9 +7,9 @@ describe('Footer', () => {
   it('renders brand, statement, contact details, made with love, and copyright', () => {
     render(<Footer />)
 
-    expect(
-      screen.getByRole('contentinfo'),
-    ).toHaveAttribute('id', 'contact')
+    const footer = screen.getByRole('contentinfo')
+    expect(footer).toHaveAttribute('id', 'contact')
+    expect(footer.className).toMatch(/scroll-mt-28/)
 
     expect(
       screen.getByRole('img', { name: siteContent.brand }),
@@ -24,6 +24,16 @@ describe('Footer', () => {
       'href',
       `mailto:${siteContent.connect.email}`,
     )
+
+    const socialEmail = screen.getByRole('link', { name: 'Email' })
+    expect(socialEmail).toHaveAttribute(
+      'href',
+      `mailto:${siteContent.connect.email}`,
+    )
+
+    expect(screen.getByRole('link', { name: 'Instagram' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Facebook' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'WhatsApp' })).toBeInTheDocument()
 
     expect(screen.getByText(siteContent.connect.phone)).toBeInTheDocument()
     expect(screen.getByText(siteContent.connect.address)).toBeInTheDocument()

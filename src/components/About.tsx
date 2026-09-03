@@ -9,7 +9,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="bg-cream px-5 py-16 sm:px-8 sm:py-24"
+      className="scroll-mt-28 bg-cream px-5 py-16 sm:px-8 sm:py-24"
       aria-labelledby="about-heading"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">

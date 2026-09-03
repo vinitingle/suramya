@@ -5,7 +5,7 @@ export function CustomBanner() {
   const { message, cta } = siteContent.custom
 
   return (
-    <section id="custom" className="px-5 py-12 sm:px-8 sm:py-16">
+    <section id="custom" className="scroll-mt-28 px-5 py-12 sm:px-8 sm:py-16">
       <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 rounded-xl bg-sage-deep px-6 py-8 text-cream sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-10">
         <div className="flex min-w-0 items-start gap-4 sm:items-center">
           <svg
