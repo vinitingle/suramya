@@ -7,9 +7,10 @@
   --color-sage-deep: #4f5c3c;
   --color-sage-muted: color-mix(in srgb, #6b7d52 18%, transparent);
   --color-ink: #2c2822;
+  --color-ink-deep: #1c1915;
   --color-ink-soft: #6a635a;
-  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
