@@ -1,68 +1,81 @@
 export const siteContent = {
   brand: 'Suramya',
-  tagline: 'Simple concepts. Rich textures. Timeless beauty.',
+  brandLine: 'Arts & Crafts',
+  tagline: 'Handmade with heart, crafted for joy.',
+  announcement: 'Handmade with love  •  Unique designs  •  Custom orders',
   nav: [
-    { label: 'The Story', href: '#story' },
-    { label: 'What We Create', href: '#create' },
-    { label: 'The Collection', href: '#collection' },
-    { label: 'Connect', href: '#connect' },
+    { label: 'Home', href: '#top' },
+    { label: 'Shop', href: '#categories' },
+    { label: 'Categories', href: '#categories' },
+    { label: 'Custom Orders', href: '#custom' },
+    { label: 'About Us', href: '#about' },
+    { label: 'Contact', href: '#contact' },
   ],
   hero: {
-    devanagari: 'सुरम्य',
+    headline: 'Handmade with heart, crafted for joy.',
     description:
-      'Suramya is an arts and crafts project creating minimalist textured artworks, layered compositions, and handcrafted clay pieces where simple ideas become objects of beauty.',
-    cta: { label: 'Explore the collection', href: '#collection' },
+      'Unique, artistic and joyful creations to brighten your space and moments.',
+    cta: { label: 'Shop now', href: '#categories' },
   },
-  story: {
-    quote: 'Beauty does not always need complexity.',
-    paragraphs: [
-      'Suramya is a Sanskrit word meaning beautiful, charming, and picturesque — a name that guides every piece we make.',
-      'We work with texture, layers, scripts, and clay, transforming simple ideas into visually meaningful objects. Not decoration for its own sake, but quiet work with character.',
-      'Our philosophy is minimalism with depth: less form, more feeling; less noise, more craft.',
-    ],
-  },
-  categories: [
+  values: [
     {
-      id: 'textured',
-      title: 'Textured Works',
-      description:
-        'Layered and tactile artworks where surface and depth become part of the visual story.',
+      id: 'handmade',
+      title: '100% Handmade',
+      description: 'Every piece is crafted by hand with care.',
     },
     {
-      id: 'script',
-      title: 'Script & Layers',
-      description:
-        'Compositions that weave typography, symbols, and scripts into quiet, layered narratives.',
+      id: 'eco',
+      title: 'Eco Friendly',
+      description: 'Sustainable materials and mindful making.',
     },
     {
-      id: 'paintings',
-      title: 'Quiet Paintings',
-      description:
-        'Simple paintings focused on composition, balance, and visual calm.',
+      id: 'gifting',
+      title: 'Perfect Gifting',
+      description: 'Thoughtful pieces for people you love.',
     },
     {
-      id: 'clay',
-      title: 'Clay Pieces',
-      description:
-        'Handcrafted showpieces in dried clay, shaped around simple and creative ideas.',
+      id: 'custom',
+      title: 'Custom Orders',
+      description: 'Made to match your idea and space.',
     },
   ],
+  categories: [
+    { id: 'paint-kits', title: 'DIY Paint Kits' },
+    { id: 'fridge-magnets', title: 'Fridge Magnets' },
+    { id: 'clay-hangings', title: 'Clay Hangings' },
+    { id: 'desktop-decor', title: 'Desktop Decor' },
+    { id: 'texture-frames', title: 'Texture Art Frames' },
+    { id: 'lippan-frames', title: 'Lippan Art Frames' },
+  ],
+  about: {
+    eyebrow: 'About us',
+    headline: 'Crafting happiness in every piece.',
+    body: 'At Suramya Arts & Crafts, we make unique, artistic, and joyful pieces by hand — from clay and texture to color and small objects that brighten a home.',
+    cta: { label: 'Learn more', href: '#about' },
+  },
+  custom: {
+    message:
+      'Looking for something special? We take customized orders to make your ideas come to life.',
+    cta: { label: 'Order custom', href: '#custom' },
+  },
   connect: {
-    heading: 'Connect',
-    intro:
-      'Enquire about available work, commission a custom piece, or begin a collaboration.',
     email: 'hello@suramya.art',
     instagram: '@suramya.studio',
     instagramUrl: 'https://instagram.com/suramya.studio',
-    demoNotice: 'This form is a demo — messages are not sent yet.',
-    enquiryTypes: [
-      'General enquiry',
-      'Available artwork',
-      'Custom commission',
-      'Collaboration',
-    ],
+    facebookUrl: '#',
+    whatsappUrl: '#',
+    phone: '+91 00000 00000',
+    address: 'Studio, India',
   },
   footer: {
-    statement: 'Art shaped by simplicity, texture and imagination.',
+    statement: 'Handmade with heart, crafted for joy.',
+    madeWith: 'Made with love',
+  },
+  chrome: {
+    search: 'Search',
+    account: 'Account',
+    bag: 'Bag, 0 items',
   },
 } as const
+
+export type CategoryId = (typeof siteContent.categories)[number]['id']
