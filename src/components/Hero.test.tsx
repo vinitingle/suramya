@@ -5,24 +5,15 @@ import { siteImages } from '../data/images'
 import { Hero } from './Hero'
 
 describe('Hero', () => {
-  it('renders brand logo, Devanagari whisper, tagline, description, and collection CTA', () => {
+  it('renders headline, description, shop CTA, and hero image', () => {
     render(<Hero />)
-
-    const logo = screen.getByRole('img', { name: siteContent.brand })
-    expect(logo).toHaveAttribute('src', '/brand/suramya-logo.png')
-
-    expect(screen.getByText(siteContent.hero.devanagari)).toBeInTheDocument()
-    expect(screen.getByText(siteContent.tagline)).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { level: 1, name: siteContent.hero.headline }),
+    ).toBeInTheDocument()
     expect(screen.getByText(siteContent.hero.description)).toBeInTheDocument()
-
-    const cta = screen.getByRole('link', { name: siteContent.hero.cta.label })
-    expect(cta).toHaveAttribute('href', '#collection')
-
-    const background = document.querySelector(
-      `img[src="${siteImages.hero}"]`,
-    ) as HTMLImageElement | null
-    expect(background).toBeTruthy()
-    expect(background).toHaveAttribute('fetchpriority', 'high')
-    expect(background).not.toHaveAttribute('loading', 'lazy')
+    const cta = screen.getByRole('link', { name: /shop now/i })
+    expect(cta).toHaveAttribute('href', '#categories')
+    const image = document.querySelector(`img[src="${siteImages.hero}"]`)
+    expect(image).toHaveAttribute('fetchpriority', 'high')
   })
 })

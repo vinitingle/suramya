@@ -1,60 +1,34 @@
 import { siteContent } from '../data/content'
 import { siteImages } from '../data/images'
-
-const focusRing =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-deep focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
+import { focusRing } from '../lib/focusRing'
 
 export function Hero() {
   return (
     <section
-      className="relative flex min-h-[calc(100svh-4.5rem)] items-end overflow-hidden sm:min-h-[calc(100svh-5rem)]"
+      className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:py-16"
       aria-label="Introduction"
     >
-      <img
-        src={siteImages.hero}
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover motion-safe:animate-[hero-image-in_1.4s_ease-out_both]"
-        decoding="async"
-        fetchPriority="high"
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-t from-cream via-cream/80 to-ink/25"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-cream/55 via-transparent to-transparent"
-        aria-hidden
-      />
-
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-start gap-5 px-5 pb-16 pt-24 sm:gap-6 sm:px-8 sm:pb-20 sm:pt-28">
-        <img
-          src="/brand/suramya-logo.png"
-          alt={siteContent.brand}
-          className="h-16 w-auto sm:h-20 md:h-24 motion-safe:animate-[hero-rise_0.9s_ease-out_both]"
-        />
-
-        <p
-          className="font-display text-lg text-sage/55 sm:text-xl motion-safe:animate-[hero-rise_0.9s_ease-out_0.12s_both]"
-          lang="hi"
-        >
-          {siteContent.hero.devanagari}
-        </p>
-
-        <h1 className="max-w-xl font-display text-3xl leading-tight text-ink sm:text-4xl md:text-5xl motion-safe:animate-[hero-rise_0.9s_ease-out_0.22s_both]">
-          {siteContent.tagline}
+      <div>
+        <h1 className="font-display text-4xl leading-tight text-ink sm:text-5xl lg:text-6xl">
+          {siteContent.hero.headline}
         </h1>
-
-        <p className="max-w-md font-sans text-base leading-relaxed text-ink-soft sm:text-lg motion-safe:animate-[hero-rise_0.9s_ease-out_0.32s_both]">
+        <p className="mt-5 max-w-md font-sans text-base leading-relaxed text-ink-soft sm:text-lg">
           {siteContent.hero.description}
         </p>
-
         <a
           href={siteContent.hero.cta.href}
-          className={`mt-1 inline-flex items-center rounded-sm bg-sage-deep px-6 py-3 font-sans text-sm tracking-wide text-cream transition-colors hover:bg-ink motion-safe:animate-[hero-rise_0.9s_ease-out_0.42s_both] ${focusRing}`}
+          className={`mt-8 inline-flex items-center rounded-md bg-sage-deep px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide text-cream hover:bg-ink ${focusRing}`}
         >
           {siteContent.hero.cta.label}
         </a>
       </div>
+      <img
+        src={siteImages.hero}
+        alt="Handmade vases, framed art, and plants styled on a cream surface"
+        className="h-72 w-full rounded-md object-cover sm:h-[28rem]"
+        decoding="async"
+        fetchPriority="high"
+      />
     </section>
   )
 }
