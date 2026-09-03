@@ -10,7 +10,7 @@ export const siteImages = {
     'clay-hangings':
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80',
     'desktop-decor':
-      'https://images.unsplash.com/photo-1485955900006-10f4d324d981?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80',
     'texture-frames':
       'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80',
     'lippan-frames':

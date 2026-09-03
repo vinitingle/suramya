@@ -1,5 +1,6 @@
 import { siteContent, type CategoryId } from '../data/content'
 import { siteImages } from '../data/images'
+import { focusRing } from '../lib/focusRing'
 import { Reveal } from './Reveal'
 
 export function CategoryGrid() {
@@ -31,7 +32,7 @@ export function CategoryGrid() {
                 <img
                   src={imageSrc}
                   alt={category.title}
-                  className="aspect-square w-40 max-w-full rounded-full object-cover mx-auto"
+                  className="mx-auto aspect-square w-full max-w-40 rounded-full object-cover"
                   loading="lazy"
                   decoding="async"
                 />
@@ -40,7 +41,7 @@ export function CategoryGrid() {
                 </h3>
                 <a
                   href="#categories"
-                  className="mt-3 inline-flex rounded-md border border-sage-deep px-3 py-1.5 text-xs font-semibold uppercase text-sage-deep"
+                  className={`mt-3 inline-flex rounded-md border border-sage-deep px-3 py-1.5 text-xs font-semibold uppercase text-sage-deep ${focusRing}`}
                 >
                   Explore
                 </a>

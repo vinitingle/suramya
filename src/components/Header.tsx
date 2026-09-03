@@ -131,15 +131,15 @@ export function Header() {
       >
         <a
           href="#top"
-          className={`inline-flex shrink-0 items-center gap-3 rounded-sm ${focusRing}`}
+          className={`inline-flex min-w-0 items-center gap-2 rounded-sm sm:gap-3 ${focusRing}`}
           onClick={closeMenu}
         >
           <img
             src="/brand/suramya-logo.png"
             alt={siteContent.brand}
-            className="h-10 w-auto"
+            className="h-10 w-auto shrink-0"
           />
-          <span className="flex flex-col leading-tight">
+          <span className="hidden min-[380px]:flex min-w-0 flex-col leading-tight">
             <span className="font-sans text-sm font-medium uppercase tracking-wide text-ink">
               {siteContent.brand}
             </span>

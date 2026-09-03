@@ -6,8 +6,8 @@ export function CustomBanner() {
 
   return (
     <section id="custom" className="px-5 py-12 sm:px-8 sm:py-16">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 rounded-xl bg-sage-deep px-6 py-8 text-cream sm:px-10 sm:py-10">
-        <div className="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 rounded-xl bg-sage-deep px-6 py-8 text-cream sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-10">
+        <div className="flex min-w-0 items-start gap-4 sm:items-center">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -26,7 +26,7 @@ export function CustomBanner() {
         </div>
         <a
           href={cta.href}
-          className={`inline-flex shrink-0 items-center rounded-md bg-cream px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide text-sage-deep hover:bg-cream-deep ${focusRing}`}
+          className={`inline-flex w-full shrink-0 items-center justify-center rounded-md bg-cream px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide text-sage-deep hover:bg-cream-deep sm:w-auto ${focusRing}`}
         >
           {cta.label}
         </a>
