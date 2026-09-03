@@ -5,23 +5,23 @@ import { siteImages } from '../data/images'
 import { About } from './About'
 
 describe('About', () => {
-  it('renders The Story section with quote, paragraphs, and about image', () => {
+  it('renders shop about split with eyebrow, headline, body, CTA, and image', () => {
     const { container } = render(<About />)
 
-    const section = container.querySelector('#story')
+    const section = container.querySelector('#about')
     expect(section?.tagName).toBe('SECTION')
 
+    expect(screen.getByText(/about us/i)).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { level: 2, name: 'The Story' }),
+      screen.getByRole('heading', {
+        level: 2,
+        name: 'Crafting happiness in every piece.',
+      }),
     ).toBeInTheDocument()
+    expect(screen.getByText(siteContent.about.body)).toBeInTheDocument()
 
-    expect(
-      screen.getByText(`\u201C${siteContent.story.quote}\u201D`),
-    ).toBeInTheDocument()
-
-    for (const paragraph of siteContent.story.paragraphs) {
-      expect(screen.getByText(paragraph)).toBeInTheDocument()
-    }
+    const learnMore = screen.getByRole('link', { name: /learn more/i })
+    expect(learnMore).toHaveAttribute('href', '#about')
 
     const image = document.querySelector(
       `img[src="${siteImages.about}"]`,
