@@ -1,7 +1,8 @@
+import type { ReactElement } from 'react'
 import { siteContent } from '../data/content'
 import { Reveal } from './Reveal'
 
-const icons: Record<(typeof siteContent.values)[number]['id'], JSX.Element> = {
+const icons: Record<(typeof siteContent.values)[number]['id'], ReactElement> = {
   handmade: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-5 w-5" aria-hidden>
       <path

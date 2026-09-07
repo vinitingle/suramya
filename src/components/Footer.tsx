@@ -1,5 +1,6 @@
 import { siteContent } from '../data/content'
 import { focusRing } from '../lib/focusRing'
+import { publicAsset } from '../lib/publicAsset'
 
 const linkClass = `rounded-sm font-sans text-sm text-ink-soft transition-colors hover:text-ink ${focusRing}`
 
@@ -75,7 +76,7 @@ export function Footer() {
         <div>
           <a href="#top" className={`inline-flex items-center rounded-sm ${focusRing}`}>
             <img
-              src="/brand/suramya-logo.png"
+              src={publicAsset('brand/suramya-logo.png')}
               alt={siteContent.brand}
               className="h-10 w-auto"
             />

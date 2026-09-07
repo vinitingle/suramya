@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { siteContent } from '../data/content'
 import { focusRing } from '../lib/focusRing'
+import { publicAsset } from '../lib/publicAsset'
 
 function SearchIcon() {
   return (
@@ -135,7 +136,7 @@ export function Header() {
           onClick={closeMenu}
         >
           <img
-            src="/brand/suramya-logo.png"
+            src={publicAsset('brand/suramya-logo.png')}
             alt={siteContent.brand}
             className="h-10 w-auto shrink-0"
           />
